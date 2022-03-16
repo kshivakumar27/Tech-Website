@@ -1,0 +1,319 @@
+<!---
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+  <a class="navbar-brand" routerLink="home" routerLinkActive="active">Angular RegisterAndLogin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
+  
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarsExample">
+  <ul class="navbar-nav mr-auto">
+  <li class="nav-item">
+  <a class="nav-link" *ngIf="loginbtn" routerLink="home" routerLinkActive="active">Home</a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link" *ngIf="loginbtn" routerLink="login" routerLinkActive="active">Login</a>
+  </li>
+  <li class="nav-item">
+  <button type="button" *ngIf="logoutbtn" class="btn btn-block" (click)="logout()">logout</button>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link" *ngIf="loginbtn" routerLink="registration" routerLinkActive="active">Registration</a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link" *ngIf="logoutbtn" routerLink="dashboard" routerLinkActive="active">Dashboard</a>
+  </li>
+  </ul>
+  </div>
+  </nav>
+
+
+  -->
+  <router-outlet></router-outlet>
+
+
+
+  <!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shortcut icon" type="image/x-icon" href="https://mlink-dev-ste-rebrand.azurewebsites.net//images/favicon.ico" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" > -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Welcome to M!Link</title>
+        <!-- Bootstrap -->
+        <link href="https://mlink-dev-ste-rebrand.azurewebsites.net/css/bootstrap.min.css" rel="stylesheet">
+		 
+		<link href="https://mlink-dev-ste-rebrand.azurewebsites.net/css/jquery.mCustomScrollbar.css" rel="stylesheet" >
+        <link href="https://mlink-dev-ste-rebrand.azurewebsites.net/css/style.css" rel="stylesheet">
+        <link href="https://mlink-dev-ste-rebrand.azurewebsites.net/css/custom.css" rel="stylesheet">
+        <link href="https://mlink-dev-ste-rebrand.azurewebsites.net/css/font-awesome.css" rel="stylesheet">
+        <link href="https://mlink-dev-ste-rebrand.azurewebsites.net/css/mlink.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+		<link href="https://mlink-dev-ste-rebrand.azurewebsites.net/css/bootstrap-select.min.css" media="screen, projection" rel="stylesheet">
+		<!-- Table -->
+        <link href="https://mlink-dev-ste-rebrand.azurewebsites.net/css/footable.core.css" rel="stylesheet">
+        <link href="https://mlink-dev-ste-rebrand.azurewebsites.net/css/easy-autocomplete.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+              <script src="js/html5shiv.js"></script>
+              <script src="js/respond.min.js"></script>
+            <![endif]-->
+        <!-- Js -->
+        
+		<script src="https://mlink-dev-ste-rebrand.azurewebsites.net/js/jquery.min.js"></script>
+        <script src="https://mlink-dev-ste-rebrand.azurewebsites.net/js/bootstrap.bundle.min.js"></script>
+ 
+        <script src="https://mlink-dev-ste-rebrand.azurewebsites.net/js/bootstrap-select.min.js"></script>
+
+		<script src="https://mlink-dev-ste-rebrand.azurewebsites.net/js/bootstrap-multiselect.js"></script>
+		<link rel="stylesheet" href="https://mlink-dev-ste-rebrand.azurewebsites.net/css/header_search_dropdown.css" />
+		
+        <script src="https://mlink-dev-ste-rebrand.azurewebsites.net/js/jquery.validate.js"></script>
+        <script src="https://mlink-dev-ste-rebrand.azurewebsites.net/js/additional-methods.js"></script>
+        <script src="https://mlink-dev-ste-rebrand.azurewebsites.net/js/footable.js"></script>
+		<script src="https://mlink-dev-ste-rebrand.azurewebsites.net/js/jquery.easy-autocomplete.js" type="text/javascript" ></script>
+		<script src="https://mlink-dev-ste-rebrand.azurewebsites.net/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        		    </head>
+    
+			
+<!-- Section -->
+<header>
+	<!-- Top Part -->
+	<div class="top-part">
+		<div class="container">
+			<!-- Logo -->
+			<div class="logo">
+				<a href="https://mlink-dev-ste-rebrand.azurewebsites.net/" class="milink-logo"><img alt="M!Link" src="https://mlink-dev-ste-rebrand.azurewebsites.net/images/logo.png"></a>
+			</div>
+			
+			<!-- Right -->
+			
+			
+			<div class="right">
+				<span class = "left">POWERED BY</span>
+				<figure class="clinic"><img src="https://mlink-dev-ste-rebrand.azurewebsites.net/images/steris-top-logo.png" alt="Image"></figure>
+			</div>
+		</div>
+	</div>
+</header>
+<section>
+	<div class="login-section">
+		<!-- Login Detail -->
+		<div class="login-detail">
+			<div class="container">
+
+				<!-- Form -->
+												<form action="zhttps://mlink-dev-ste-rebrand.azurewebsites.net/login" method="post" accept-charset="utf-8">
+                                                                                                                     <input type="hidden" name="mlnkcsrfazdev" value="6ac8e2cfd80e3939f0f738986ae7b4cb" />
+				<div class="login-form">
+					<div id="errorT"></div>
+					<input type="text" name="email" id="email" class="field" placeholder="EMAIL" >
+					<div class="error"></div>
+
+					<input type="password" name="password" id="password" class="field d-none " placeholder="PASSWORD" autocomplete="off">
+					<div class="error"> </div>
+
+					<input type="hidden" name="timezone" id="timezone" value="">
+					<input type="button" data-auth="https://login.microsoftonline.com/9f503db2-02a8-4bb6-8b64-ee489d2a21c5/oauth2/authorize?prompt=select_account&state=a0c51a0ddd82aeb4bdfffa77ff19386d&scope=&response_type=code&approval_prompt=auto&redirect_uri=https%3A%2F%2Fmlink-dev-ste-rebrand.azurewebsites.net%2Flogin%2Floginad&client_id=ec8b7696-d0dd-4258-8754-ba221d8cbcbd" name="next_btn" id="next_btn" class="singin-btn " value="Next">
+					<input type="submit" name="login" class="singin-btn d-none" value="sign in">
+				</div>
+				</form>				<div class="trouble">Trouble logging in?? <a href="https://mlink-dev-ste-rebrand.azurewebsites.net/forgotpassword" title="Forgot Password">Click Here</a></div>
+			</div>
+		</div>
+
+		<!-- Login Detail 2 -->
+		<div class="login-detail-2">
+			<div class="container">
+				<h2>Providing You with Digital Documentation and<br>Helping You Achieve Compliance… </h2>
+				<figure><img src="images/login_image.png" alt="Image"></figure>
+				 
+			</div>
+		</div>
+
+	</div>
+</section>
+<script src="https://mlink-dev-ste-rebrand.azurewebsites.net/js/jstz-1.0.4.min.js"></script>
+<script type="text/javascript">
+	jQuery(function ($) {
+
+		jQuery('#next_btn').click( function(){
+			if($('form').valid()){
+				$email = jQuery('#email').val().trim();
+				$email = $email.toLowerCase();
+				if($email.includes("@steris.com")){
+					window.location.href = jQuery(this).data('auth')+'&login_hint='+$email;
+				} else {
+					jQuery('.singin-btn').removeClass('d-none');
+					jQuery('#password').removeClass('d-none');
+					jQuery(this).addClass('d-none');
+				}
+			}
+		});
+		
+		$('form').submit( function(e){
+			if(jQuery('#password').is(':visible')){
+				$email = jQuery('#email').val().trim();
+				$email = $email.toLowerCase();
+				if($email.includes("@steris.com")){
+					e.preventDefault();
+					window.location.href = jQuery('#next_btn').data('auth');
+				}
+			} else {
+				e.preventDefault();
+				jQuery('#next_btn').trigger('click');
+			}
+		});
+
+
+		var tz = jstz.determine();
+		var timezone = tz.name();
+  		jQuery('#timezone').val(timezone)
+		jQuery('#email')[0].focus();
+		var validator = $('form').validate({
+			rules: {
+				email: {
+					required: true,
+					email: true
+				},
+				password: {
+					required: true
+				}
+			},
+			messages: {email: {required: "Please enter email address", email: "Please enter valid email address"}, password: "Please enter password"},
+		});
+		
+		setInterval(function () {
+		  if(alert('Your session has expired!')){}
+		  else    window.location.reload(); 
+		}, 7200000);
+	});
+</script>
+
+<!-- Footer -->
+<footer>
+        <div class="footer-detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-3 col-xs-12">
+                    <div class="footer-info-1">
+                        <figure><img src="https://mlink-dev-ste-rebrand.azurewebsites.net//images/footer_logo.png" alt="Image"></figure>
+                        <p>STERIS is a global leader in infection prevention, contamination control, surgical and critical care technologies and more.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-3 col-xs-12">
+                    <h3>navigation</h3>
+                                        <ul class="footer-link">
+                        <li><a href="https://mlink-dev-ste-rebrand.azurewebsites.net/" title="Home">Home</a></li>
+                                                                                                                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-sm-3 col-xs-12">
+                    <h3>ACCOUNT</h3>
+                    <ul class="footer-link">
+                                                    <li><a href="https://mlink-dev-ste-rebrand.azurewebsites.net/" title="Login">Login</a></li>
+                            <li><a href="https://mlink-dev-ste-rebrand.azurewebsites.net/contact" title="Register">Register</a></li>
+                            <li><a href="https://mlink-dev-ste-rebrand.azurewebsites.net/forgotpassword" title="Forgot Password">Forgot Password</a></li>
+                                            </ul>
+                </div>
+
+                <div class="col-lg-2 col-sm-3 col-xs-12">
+                    <div class="footer-contact">
+                        <h3>CONTACT US</h3>
+                        <p>5960 Heisley Road<br>Mentor, OH 44060<br>Phone: 440.354.2600<br>
+                            <a href="https://mlink-dev-ste-rebrand.azurewebsites.net/contact" title="Contact Form">Contact Form</a>                            <br> <a href="javascript:void(0)" title="FAQ">FAQ</a></p>
+                        <ul class="social">
+                            <li><a href="https://www.facebook.com/STERIS" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/STERIS" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.linkedin.com/company/steris-corporation" title="Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://www.youtube.com/user/STERISCorporation" title="You Tube" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 col-xs-12 pull-right">
+                    <ul class="terms-link">
+                        <li><a target="_blank" href="https://www.steris.com/about/business/privacy" title="Privacy">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                    <p>© Copyright 2022, <a href="javascript:void(0)" title="STERIS plc">STERIS plc.</a> All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Search -->
+<script>
+    $('.search-box .icon-magnifier').on('click', function(e) {
+        $('.search-bar').toggleClass("search-bar-open");
+        $('.search-icon').toggleClass("search-icon-open");
+        $('.search-bar').focus();
+        //e.preventDefault();
+        e.stopPropagation();
+    });
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('.search-bar').length) {
+            if ($('.search-bar').is(":visible")) {
+                $('.search-bar').removeClass("search-bar-open");
+                $('.search-icon').removeClass("search-icon-open");
+                $('.search-bar').val(null);
+            }
+        }
+        e.stopPropagation();
+    });
+    $(document).ready(function() {
+        setTimeout(function() {
+            $('.body-main-loader').fadeOut(500, function() {
+                $('body').removeClass('loading-content');
+                $(this).remove();
+            });
+        }, 1000);
+	
+        /* Main header search autocomplete */
+        var options = {
+            url: function(q) {
+                return "/home/autocomplete/" + q
+            },
+            getValue: "equipment_description",
+            list: {
+                onChooseEvent: function() {
+                    var value = $("#search_header_input").getSelectedItemData().serial;
+                    jQuery('#search_header').val(value);
+                    jQuery('#search_form_header').submit();
+                }
+            },
+            template: {
+                type: "custom",
+                method: function(value, item) {
+                    return '<a href="javascript:void(0)"><div class="right"><span>' + item.equipment_description + '</span> S/N: <strong>' + item.serial + '</strong></div></a>';
+
+                }
+            },
+            theme: "square"
+        };
+        jQuery("#search_header_input").easyAutocomplete(options);
+        /* Multisite auto submit form on change of site selection */
+        $('#multisite_customer_selection').change(function() {
+            $('#multisite_customer').submit();
+        });
+    });
+</script>
+<!-- Table -->
+<script src="https://mlink-dev-ste-rebrand.azurewebsites.net/js/footable.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('table').not('.plus-table, .plus-table-2').footable();
+    });
+</script>
+
+
+</html>
